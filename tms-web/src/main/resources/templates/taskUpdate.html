@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task management</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/styles/view.css}" rel="stylesheet" />
+</head>
+<body>
+    <h2 th:text="'Update task'" />
+
+
+    <form th:action="@{/update-task}" th:object="${task}" method="post">
+        <input th:value="${task.id}" type="hidden" th:field="*{id}"/>
+        <p th:class="form-fields"><span th:class="attr-name">Task name: </span><input required th:value="${task.taskName}" type="text" th:field="*{taskName}"/></p>
+        <p th:class="form-fields"><span th:class="attr-name">Task time spent: </span><input required th:value="${task.timeSpent}" type="text" th:field="*{timeSpent}"/></p>
+        <p th:class="form-fields"><span th:class="attr-name">Task group: </span><input required th:value="${task.taskGroup}" type="text" th:field="*{taskGroup}"/></p>
+        <p th:class="form-fields"><span th:class="attr-name">Task assignee: </span><input required th:value="${task.assignee}" type="text" th:field="*{assignee}"/></p>
+        <p th:class="form-fields"><span th:class="attr-name">Task finished:</span>
+            <select th:field="*{finished}">
+                <option th:value="true">finished</option>
+                <option th:value="false">not finished</option>
+            </select>
+        </p>
+        <p><input type="submit" value="Update"/></p>
+    </form>
+
+    <form th:action="@{/delete-task}" th:object="${task}" method="post">
+        <input th:value="${task.id}" type="hidden" th:field="*{id}"/>
+        <p><input type="submit" value="Delete"/></p>
+    </form>
+
+</body>
+</html>

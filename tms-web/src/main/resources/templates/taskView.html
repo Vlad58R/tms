@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task management</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/styles/view.css}" rel="stylesheet" />
+</head>
+<body>
+    <h2 th:text="'Task view'" />
+
+    <ul th:class="table-headers">
+        <li>
+            <span th:class="attr-name">Task name: </span><span th:class="attr-value" th:text="${task.taskName}"></span>
+        </li>
+        <li>
+            <span th:class="attr-name">Task time spent: </span><span th:class="attr-value" th:text="${task.timeSpent}"></span>
+        </li>
+        <li>
+            <span th:class="attr-name">Task group: </span><span th:class="attr-value" th:text="${task.taskGroup}"></span>
+        </li>
+        <li>
+            <span th:class="attr-name">Task assignee: </span><span th:class="attr-value" th:text="${task.assignee}"></span>
+        </li>
+        <li>
+            <span th:class="attr-name">Task finished: </span><span th:class="attr-value" th:text="${task.finished} ? 'finished' : 'not finished'"></span>
+        </li>
+        <li>
+            <a th:class="action-btn" th:href="@{/task/update(id=${task.id})}">Update task</a>
+            <a th:class="action-btn" th:href="@{/}">View all tasks</a>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task management</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/styles/index.css}" rel="stylesheet" />
+</head>
+<body>
+    <h2 th:text="'Task list'" />
+
+    <ul th:class="table-headers">
+        <li>Task name</li>
+        <li>Task time spent</li>
+        <li>Task group</li>
+        <li>Task assignee</li>
+        <li>Task finished</li>
+        <li>Actions</li>
+    </ul>
+    <ul th:each="task: ${tasks}">
+        <li>
+            <span th:text="${task.taskName}"></span>
+        </li>
+        <li>
+            <span th:text="${task.timeSpent}"></span>
+        </li>
+        <li>
+            <span th:text="${task.taskGroup}"></span>
+        </li>
+        <li>
+            <span th:text="${task.assignee}"></span>
+        </li>
+        <li>
+            <span th:text="${task.finished} ? 'finished' : 'not finished'"></span>
+        </li>
+        <li>
+            <a th:href="@{/task(id=${task.id})}">view</a>
+        </li>
+    </ul>
+
+        <a th:class="action-btn" th:href="@{/task/create}">Create task</a>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+.attr-name {
+    font-weight: bold;
+    width: 135px;
+    display: inline-flex;
+}
+
+.form-fields {
+    border-bottom: 1px solid #000;
+    padding-bottom: 8px;
+    width: 15%;
+}
+
+select {
+    width: 51%;
+    position: relative;
+    margin-left: -4px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.action-btn {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}

@@ -1,0 +1,27 @@
+.name {
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    width: 1200px;
+}
+
+.table-headers {
+    font-weight: bold;
+}
+
+li {
+    width: 15%;
+    float: left;
+    padding: 4px;
+    border: 1px solid #000;
+}
+
+.action-btn {
+    width: 100%;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
